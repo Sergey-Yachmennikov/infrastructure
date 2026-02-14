@@ -4,10 +4,10 @@ services:
     image: gitlab/gitlab-ce:latest
     container_name: gitlab
     restart: always
-    hostname: 'gitlab.local'
+    hostname: 'localhost'
     environment:
       GITLAB_OMNIBUS_CONFIG: |
-        external_url 'http://gitlab.local:8929'
+        external_url 'http://localhost:8929'
         gitlab_rails['gitlab_shell_ssh_port'] = 2224
     ports:
       - '8929:8929'
@@ -29,3 +29,11 @@ services:
       - "5001:5000"     # Docker registry (если включишь)
     volumes:
       - ./nexus-data:/nexus-data
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    restart: always
+    volumes:
+      - ./gitlab-runner/config:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock

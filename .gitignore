@@ -2,3 +2,4 @@
 /gitlab/
 /nexus-data/
 .env
+gitlab-runner
