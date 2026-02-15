@@ -5,13 +5,15 @@ docker_login:
 install_software_to_runner:
     docker exec -it gitlab-runner bash -c "
       apt-get update && \
-      apt-get install -y docker.io curl git && \
+      apt-get install -y docker.io curl git maven && \
       apt-get clean
     "
 install_sudo:
     apt-get update && apt-get install -y sudo
 add_runner_to_docker_group:
     sudo usermod -aG docker gitlab-runner
+rights:
+    docker exec -it gitlab-runner chmod 666 /var/run/docker.sock
 registration:
     docker exec -it gitlab-runner gitlab-runner register \
       --non-interactive \
