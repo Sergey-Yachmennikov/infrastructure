@@ -23,7 +23,7 @@ registration:
       --non-interactive \
       --url "http://gitlab:8929" \
       --clone-url "http://gitlab:8929" \
-      --registration-token "glrt-AjBuENv-14ex_JJG_dr7ZG86MQpwOjEKdDozCnU6MQ8.01.171bxr59m" \
+      --registration-token "glrt-awTXhz90AsXDF-hf94fjTm86MQpwOjEKdDozCnU6MQ8.01.170uz8ecx" \
       --executor "shell" \
       --description "shell-runner"
 

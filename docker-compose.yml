@@ -31,7 +31,7 @@ services:
       - ./nexus-data:/nexus-data
 
   gitlab-runner:
-    image: gitlab/gitlab-runner:v16.11.0
+    build: .
     container_name: gitlab-runner
     restart: always
     user: root
